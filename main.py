@@ -2,7 +2,7 @@ import streamlit as st
 
 from streamlit_option_menu import option_menu
 
-import entendendo_o_negocio, tratamento_dados, calculando_ivs, analise_exploratoria  # noqa: E401
+import entendendo_o_negocio, tratamento_dados, calculando_ivs, analise_exploratoria, base_dados  # noqa: E401
 
 
 st.set_page_config(
@@ -29,6 +29,7 @@ class MultiApp:
                     "✅Tratamento de Dados",
                     "🧮Calculando os IV's",
                     "📊Análise Exploratória",
+                    "📊Base de Dados",
                 ],
                 default_index=0,
                 styles={
@@ -55,6 +56,8 @@ class MultiApp:
             calculando_ivs.app()
         if app == "📊Análise Exploratória":
             analise_exploratoria.app()
+        if app == "📊Base de Dados":
+            base_dados.app()
 
 
 multiapp = MultiApp()
