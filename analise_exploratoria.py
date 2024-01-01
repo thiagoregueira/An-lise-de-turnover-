@@ -5,7 +5,7 @@ import plotly.graph_objects as go
 
 
 st.set_page_config(
-    page_title="Análise Turnover",
+    page_title="Análise Exploratória",
     page_icon="📊",
     layout="wide",
 )

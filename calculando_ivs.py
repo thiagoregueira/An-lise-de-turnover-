@@ -5,7 +5,7 @@ import numpy as np
 
 
 st.set_page_config(
-    page_title="Análise Turnover",
+    page_title="Calculando Iv's",
     page_icon="📊",
     layout="wide",
 )

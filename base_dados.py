@@ -3,7 +3,7 @@ import pandas as pd
 
 
 st.set_page_config(
-    page_title="Análise Turnover",
+    page_title="Base de Dados",
     page_icon="📊",
     layout="wide",
 )

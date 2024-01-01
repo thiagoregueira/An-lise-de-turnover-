@@ -4,7 +4,7 @@ import plotly.express as px
 
 
 st.set_page_config(
-    page_title="Análise Turnover",
+    page_title="Tratamento de Dados",
     page_icon="📊",
     layout="wide",
 )
