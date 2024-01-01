@@ -1,6 +1,13 @@
 import streamlit as st
 
 
+st.set_page_config(
+    page_title="Análise Turnover",
+    page_icon="📊",
+    layout="wide",
+)
+
+
 def app():
     st.markdown(
         """

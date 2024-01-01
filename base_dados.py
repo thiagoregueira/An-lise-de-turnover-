@@ -2,6 +2,13 @@ import streamlit as st
 import pandas as pd
 
 
+st.set_page_config(
+    page_title="Análise Turnover",
+    page_icon="📊",
+    layout="wide",
+)
+
+
 @st.cache_data
 def load_data():
     df = pd.read_excel("Base_RH.xlsx", sheet_name="Base")
