@@ -4,13 +4,6 @@ import plotly.express as px
 import numpy as np
 
 
-st.set_page_config(
-    page_title="Calculando Iv's",
-    page_icon="📊",
-    layout="wide",
-)
-
-
 @st.cache_data
 def load_data():
     df = pd.read_excel("Base_RH.xlsx", sheet_name="Base")

@@ -1,13 +1,6 @@
 import streamlit as st
 
 
-st.set_page_config(
-    page_title="Entendendo o Negócio",
-    page_icon="📊",
-    layout="wide",
-)
-
-
 def app():
     st.markdown(
         """

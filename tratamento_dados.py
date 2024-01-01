@@ -3,13 +3,6 @@ import pandas as pd
 import plotly.express as px
 
 
-st.set_page_config(
-    page_title="Tratamento de Dados",
-    page_icon="📊",
-    layout="wide",
-)
-
-
 @st.cache_data
 def load_data():
     df = pd.read_excel("Base_RH.xlsx", sheet_name="Base")
