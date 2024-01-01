@@ -11,6 +11,8 @@ def load_data():
 
 
 def app():
+    df = load_data()
+
     st.markdown(
         """
         <h1 style='text-align: left;'>Análise Exploratória</h1>
@@ -21,12 +23,60 @@ def app():
 
     st.markdown(
         """
-        <h2 style='text-align: center;'>Funcionário_deixou_a_empresa X Faz_hora_extras?</h2><br><br>
+        <h2 style='text-align: center;'>Medidas Resumo (Quantitativas)</h2><br><br>
         """,
         unsafe_allow_html=True,
     )
 
-    df = load_data()
+    st.dataframe(df.describe().T, use_container_width=True)
+
+    st.markdown(
+        """
+        <h2 style='text-align: center;'>Taxa de turnover atual </h2><br><br>
+        """,
+        unsafe_allow_html=True,
+    )
+
+    col20, col21 = st.columns(2)
+
+    with col20:
+        # frequencia absoluta
+        freq_abs = df["Funcionário_deixou_a_empresa"].value_counts()
+
+        st.dataframe(freq_abs, use_container_width=True)
+
+        # frequencia relativa
+        freq_rel = round(freq_abs / freq_abs.sum() * 100)
+
+        fig = px.pie(
+            values=freq_rel,
+            names=freq_rel.index,
+            color_discrete_sequence=["#83c9ff", "#0068c9"],
+            hole=0.5,
+        )
+
+        st.plotly_chart(fig)
+
+    with col21:
+        # frequencia relativa
+        freq_rel = round(freq_abs / freq_abs.sum() * 100)
+
+        st.dataframe(freq_rel, use_container_width=True)
+
+        st.markdown(
+            """
+            <br><br><br><br>
+            <p style='text-align: justify;'>A taxa de turnover atual da empresa é de 16%, o que significa que 16% dos funcionários deixaram a empresa no período de 1 ano. Uma taxa de rotatividade considerada alta, pelos padrões da empresa, que deseja melhorá-la para uma faixa entre 5% a 10%.</p>
+            """,
+            unsafe_allow_html=True,
+        )
+
+    st.markdown(
+        """
+        <h2 style='text-align: center;'>Funcionário_deixou_a_empresa X Faz_hora_extras?</h2><br><br>
+        """,
+        unsafe_allow_html=True,
+    )
 
     # Análise bidimensional entre as variáveis mais importantes do IV
 
